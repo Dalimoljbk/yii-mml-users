@@ -41,16 +41,31 @@ $config = [
                 ],
             ],
         ],
+        'user' => [
+            'identityClass' => 'app\modules\auth\models\SignupForm',
+            'enableAutoLogin' => true, // if you want cookie-based login
+        ],
+         
         'db' => $db,
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'auth/index' => 'auth/auth/index',
+                'auth/signup' => 'auth/auth/sign-up',
+                'auth/login' => 'auth/auth/login',
             ],
         ],
-        */
+        
     ],
+     'modules' => [
+         'auth' => [
+            'class' => 'app\modules\auth\Auth',
+//            'enableAutoLogin' => true,
+         ],
+         
+     ],
     'params' => $params,
 ];
 

@@ -64,6 +64,11 @@ a.desc:after {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Style for label*/
+#register-form .label-custom {
+    display: inline !important;
+}
+
 @media(max-width:767px) {
     .nav li > form > button.logout {
         display:block;
@@ -86,3 +91,4 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+
