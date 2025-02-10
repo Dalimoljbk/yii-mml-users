@@ -17,7 +17,8 @@ $config = [
             'cookieValidationKey' => 'Eu1JeqvoYjMu-YGOzFBYSePVLAA74YQg',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+		'class' => 'yii\caching\FileCache',
+		'keyPrefix' => 'mml', // a unique cache key prefix
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -37,7 +38,9 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+		    'levels' => ['error', 'warning'],
+		    'logVars' => ['_SERVER.REQUEST_URI'],
+          	    'logFile' => '@runtime/logs/app-'.date('Ymd').'.log',
                 ],
             ],
         ],
